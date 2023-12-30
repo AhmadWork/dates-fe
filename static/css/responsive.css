@@ -1,0 +1,443 @@
+/* XL Device :1200px. */
+@media (min-width: 1200px) and (max-width: 1449px) {
+  
+    
+    
+}
+
+/* LG Device :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+
+   .header__wrap {
+	position: relative;
+	padding-top: 120px;
+}
+    
+ 
+    
+    
+    
+    
+}
+
+ 
+/* MD Device :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+   
+  .header__top {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	max-width: 70px;
+}  
+ .header__box__fx {
+	width: 664px;
+	margin: auto;
+}   
+ .profile {
+	width: 100px;
+	height: 100px;
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+ 
+
+/* SM Small Device :320px. */
+@media only screen and (min-width: 359px) and (max-width: 767px) {
+
+   .popup1 .modal-dialog {
+	max-width: 320px;
+	margin: auto;
+} 
+    
+ .buy__popup_title h4 {
+	margin: 0;
+	font-size: 15px;
+	color: #FFFFFF;
+	font-weight: 700;
+	text-align: center;
+	max-width: 260px;
+}   
+.header__top {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	max-width: 50px;
+}  
+
+ .profile {
+	width: 70px;
+	height: 70px;
+	top: -40px;
+}   
+ .box__bt.bt1 {
+	margin-bottom: 0;
+}   
+ .box__bt {
+	margin-bottom: 20px !important;
+	margin: auto;
+	width: 260px;
+}   
+ .box__bt h6 {
+	font-size: 20px;
+	margin-bottom: 4px;
+	width: 178px;
+}   
+ .box__bt p {
+	margin: 0;
+	font-size: 25px;
+	right: 0;
+	width: 79px;
+}   
+
+  .header__wrap {
+	position: relative;
+	padding-top: 80px;
+}  
+ .date__box {
+	width: 100%;
+	padding: 20px;
+	margin-bottom: 40px;
+} 
+ .scroll__line {
+	display: none;
+}   
+  .date__single__item {
+	width: 100%;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-bottom: 40px;
+	margin-bottom: 20px;
+}  
+ .date__single__item {
+	height: 230px;
+	width: 300px;
+	margin: auto;
+	margin-bottom: 20px;
+}   
+    
+ .tree1 {
+	position: absolute;
+	left: 18px;
+	bottom: 19px;
+	max-width: 149px;
+}   
+.tree2 {
+	position: absolute;
+	left: 18px;
+	bottom: 19px;
+	max-width: 149px;
+	right: 13px;
+	left: auto;
+}   
+ .boost__single__btn {
+	width: 210px;
+	height: 55px;;
+	margin: auto;
+}   
+ .boost__single__btn:nth-child(3) {
+	margin-left: 0;
+	margin: auto;
+	margin-bottom: 20px;
+}   
+ .boost__single__btn:nth-child(4) {
+	margin-right: 0;
+	width: 210px;
+	margin: auto;
+	margin-top: 0;
+}   
+  .boost__single__btn:last-child a {
+	width: 145px;
+}  
+ .trading__bt {
+	width: 210px;
+	height: 100px;
+}   
+  .trading__bt a {
+	font-size: 25px;
+	line-height: 26px;
+	margin-bottom: 5px;
+}  
+ .single__progress {
+	width: 108px;
+}  
+ .date__sp1 {
+	bottom: 95px;
+	left: 110px;
+	max-width: 40px;
+}   
+.date__sp1.date__sp2 {
+	left: auto;
+	right: 108px;
+}    
+ .plm1.plm2 {
+	display: none;
+}   
+ .plm1 {
+	max-width: 60px;
+	position: absolute;
+	bottom: 80px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}   
+    
+    
+  
+.days__wp {
+  margin-top: 0;
+  display: block;
+  width: 256px;
+  margin: auto;
+}
+.days__lf--bt {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.day__ri {
+  width: 100%;
+  height: 55px;
+}
+    
+ .day__single {
+	width: 14%;
+	height: 35px;
+}   
+ .chk img {
+	max-width: 15px;
+}   
+.day__single p {
+	font-size: 20px;
+}    
+.over__single {
+	max-width: 190px;
+	margin: auto;
+	margin-bottom: 10px;
+}  
+.over__popup .modal-dialog {
+	max-width: 320px;
+	margin: auto;
+}    
+ .john_single__box {
+	width: 280px;
+	margin-bottom: 15px;
+}   
+  .john__nmbr {
+	width: 18%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+}  
+ .john__box {
+	width: 77%;
+	height: 50px;
+}   
+    
+ .john__lf h6 {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 700;
+}   
+  .john__ri h5 {
+	margin: 0;
+	font-size: 16px;
+}  
+  .john__lf {
+	width: 40%;
+	padding-left: 6px;
+}  
+.john__ri {
+	width: 40%;
+	text-align: center;
+	padding-right: 13px;
+}    
+ .star span {
+	width: 11px;
+	height: 11px;
+}   
+ .over__inner {
+	width: 100%;
+	padding-top: 55px;
+	padding-bottom: 40px;
+	margin-top: -34px;
+}   
+ .trading__title h3 {
+	font-size: 30px;
+	margin-bottom: 10px;
+}   
+ .trading__single__item {
+	width: 180px;
+	margin: auto;
+	margin-bottom: 20px;
+}   
+  .sell_single__item {
+	width: 180px;
+	margin: auto;
+	margin-bottom: 20px;
+}  
+ .plam__bt {
+	width: 200px;
+	height: 100px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+}   
+  .trading__fx {
+	display: block;
+}  
+    
+    
+    
+    
+    
+    
+}
+    
+
+
+
+
+
+
+
+/* SM Small Device :550px. */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+ .box__bt {
+	width: 220px;
+	height: 65px;
+}   
+    
+  .box__bt {
+	margin-bottom: 0px !important;
+	margin: auto;
+}  
+    
+ .box__bt.bt1 {
+	margin-bottom: 20px !important;
+}   
+    
+ .header__box__fx {
+	width: 500px;
+	margin: auto;
+}   
+    
+ .hedaer__box {
+	background-size: 100% 100%;
+}   
+  .box__bt h6 {
+	font-size: 24px;
+	margin-bottom: 4px;
+	width: 154px;
+}  
+ .box__bt p {
+	margin: 0;
+	font-size: 25px;
+	right: 0;
+	width: 68px;
+}   
+ .date__single__item {
+	height: 260px;
+	width: 400px;
+	margin: auto;
+	margin-bottom: 20px;
+}   
+ .tree1 {
+	left: 27px;
+	bottom: 19px;
+	max-width: 177px;
+}   
+.tree2 {
+	left: 27px;
+	bottom: 30px;
+	max-width: 177px;
+	right: 20px;
+	left: auto;
+}   
+
+.date__r-sec {
+	bottom: 50px;
+}  
+    
+  .date__sp1 {
+	bottom: 89px;
+	left: 115px;
+	max-width: 70px;
+}  
+ .date__sp1.date__sp2 {
+	left: auto;
+	right: 115px;
+}   
+  .plm1 {
+	max-width: 60px;
+	position: absolute;
+	bottom: 80px;
+	left: 120px;
+	right: auto;
+}  
+  .plm1.plm2 {
+	display: block;
+	right: 120px;
+}  
+    
+ .days__lf--bt {
+	width: 100%;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}   
+ .trading__single__item {
+	width: 155px;
+	margin: auto;
+	margin-bottom: 20px;
+}   
+ .trading__fx {
+	display: flex;
+}   
+ .sell_single__item {
+	width: 155px;
+	margin: auto;
+	margin-bottom: 20px;
+	height: 250px;
+}   
+  .sell__ig.sell-ig3 {
+	max-width: 130px;
+}  
+  .sell__ig.sell-ig2 {
+	max-width: 120px;
+}  
+ .sell__ig {
+	max-width: 110px;
+}   
+  .sell__ig.pl1 {
+	margin-top: 36px;
+}  
+  .sell__ig.pl2 {
+	margin-top: 22px;
+}  
+  .sell__ig.pl3 {
+	max-width: 130px;
+	margin-top: 15px;
+}  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ 
+}
