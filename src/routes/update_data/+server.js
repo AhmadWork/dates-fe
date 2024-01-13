@@ -3,8 +3,9 @@ import { json } from '@sveltejs/kit';
 // @ts-nocheck
 export async function POST({ request }) {
   const { token, coins, dates } = await request.json();
+  const db_url = import.meta.env.VITE_BACK_END_URL;
 
-      const response = await fetch('http://localhost:3999/api/users/update', {
+      const response = await fetch(`${db_url}/api/users/update`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

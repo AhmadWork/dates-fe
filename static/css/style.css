@@ -55,6 +55,11 @@ body {
     line-height: 25px;
 }
 
+input {
+  font-family: sans-serif !important;
+
+}
+
 
 .selector-for-some-widget {
     box-sizing: content-box;

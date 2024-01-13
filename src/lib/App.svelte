@@ -190,6 +190,11 @@ function storeAuthToken(token) {
     isAuthed = true;
 }
 
+function removeAuthToken() {
+    if (!browser) return;
+    localStorage.removeItem('authToken');
+    isAuthed = false;
+}
 // Function to get the token from localStorage
 function getAuthToken() {
     if (!browser) return;
@@ -211,7 +216,6 @@ async function loginUser() {
         });
 
         const data = await response.json();
-
         if (response.status === 200) {
             // Assuming the API returns dates, coins, and a token in the response
             const {
@@ -385,7 +389,7 @@ async function retrieveUser() {
 
         const data = await response.json();
 
-        if (response.status === 200) {
+        if (data.status === 200) {
             const {
                 dates: onlineDates,
                 coins: onlineCoins
@@ -400,6 +404,9 @@ async function retrieveUser() {
 
         } else {
             // Login failed, handle the error
+            console.log("im here");
+            await removeAuthToken() 
+            isModalOpen = true;
             error = "Login failed. Please check your credentials.";
         }
     } catch (err) {
@@ -502,9 +509,8 @@ onDestroy(() => {
     </div>
     <!--header--area--end-->
     {#if isModalOpen}
-    <div class="fixed inset-0 bg-black opacity-50 z-40"></div>
-    <div class="fixed top-0 left-0 w-full h-full flex justify-center items-center modalx ">
-        <div class="bg-bc6321 p-8 rounded-lg shadow-xl w-3/4 max-w-xl modal-box ">
+    <div id="MarketModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50" dir="rtl">
+      <div class="bg-[#d9a66c] rounded-lg p-8 max-w-md w-full" style="background-image: url(img/date/date-big-bg.png);">
           {#if isOpeningModal }
                 <p class="text-white text-lg mb-4 ">
                     شايب القرية: شكلك مب غريب علي انت من المزارعين ولا بس جاي تشوف المكان
@@ -518,18 +524,52 @@ onDestroy(() => {
                     </button>
                 </div>
         {:else if isLoginMode }
-          <h1 class="text-2xl font-bold mb-4">حي الله مزارعنا دخل بياناتك عشان نوديك لمزرعتك</h1>
-          <input type="email" placeholder="بريدك" bind:value={email} class="mb-2 w-full p-2 border rounded">
-          <input type="password" placeholder="كلمة السر" bind:value={password} class="mb-4 w-full p-2 border rounded">
-          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" on:click={loginUser}>تفضل</button>
+        <h2 class="text-2xl text-white font-bold">حي الله مزارعنا دخل بياناتك عشان نوديك لمزرعتك</h2>
 
-          <p class="mt-2 text-custom-text">منتب مزارع؟ يمديك تشري مزرعتك من هنا <button class="text-blue-500 underline" on:click={toggleLoginMode}>اشتر مزرعة</button></p>
+          <div class="flex flex-col mb-6">
+            <label class="text-white mb-2">البريد الإلكتروني</label>
+            <input type="email" placeholder="بريدك"  bind:value={email} class="flex h-10 w-full border border-input text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-white text-[#a76d4d] px-4 py-2 rounded-lg shadow-md" />
+          </div>
+          <div class="flex flex-col mb-6">
+            <label class="text-white mb-2">كلمة السر</label>
+            <input
+              class="flex h-10 w-full border border-input text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-white text-[#a76d4d] px-4 py-2 rounded-lg shadow-md"
+              type="password"
+              bind:value={password}
+            />
+          </div>
+        
+          <button on:click={loginUser} class="items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 bg-[#f4b25f] text-white px-8 py-3 rounded-lg shadow-md mx-auto block">
+            توجه لمزرعتك
+          </button>
+          
+          <p class="text-white text-center mt-4 text-xs">
+            منتب مزارع؟ يمديك تشري مزرعتك من هنا
+            <span class="inline text-blue-500 underline " on:click={toggleLoginMode}>
+              اشتر مزرعة
+            </span>
+          </p>
         {:else if !isLoginMode}
-        <h1 class="text-2xl font-bold mb-4">معروض شراء مزرعة</h1>
-        <input type="text" placeholder="اسمك" bind:value={playerName} class="mb-2 w-full p-2 border rounded">
-        <input type="email" placeholder="ايميلك" bind:value={email} class="mb-2 w-full p-2 border rounded">
-        <input type="password" placeholder="كلمة السر" bind:value={password} class="mb-4 w-full p-2 border rounded">
-        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" on:click={register}>ارفع طلب</button>
+        <h2 class="text-2xl text-white font-bold">معروض شراء مزرعة</h2>
+        <div class="flex flex-col mb-6">
+          <label class="text-white mb-2">أسمك</label>
+          <input placeholder="أسمك"  bind:value={playerName} class="flex h-10 w-full border border-input text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-white text-[#a76d4d] px-4 py-2 rounded-lg shadow-md" />
+        </div>
+            <div class="flex flex-col mb-6">
+            <label class="text-white mb-2">البريد الإلكتروني</label>
+            <input type="email" placeholder="بريدك"  bind:value={email} class="flex h-10 w-full border border-input text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-white text-[#a76d4d] px-4 py-2 rounded-lg shadow-md" />
+          </div>
+          <div class="flex flex-col mb-6">
+            <label class="text-white mb-2">كلمة السر</label>
+            <input
+              class="flex h-10 w-full border border-input text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-white text-[#a76d4d] px-4 py-2 rounded-lg shadow-md"
+              type="password"
+              bind:value={password}
+            />
+          </div>
+          <button on:click={register} class="items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 bg-[#f4b25f] text-white px-8 py-3 rounded-lg shadow-md mx-auto block">
+            ارفع طلب
+          </button>
         {/if}
       </div>
     </div>
@@ -623,9 +663,8 @@ onDestroy(() => {
       {#if isMarketModalOpen}
         <div id="MarketModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div class="bg-[#d9a66c] rounded-lg p-8 max-w-md w-full" style="background-image: url(img/date/date-big-bg.png);">
-              <div class="items-center mb-6">
-                      <span class=" h-10 w-10 shrink-0 overflow-hidden rounded-full">السوق المركزي</span>
-              </div>
+            <h2 class="text-2xl text-white font-bold">السوق المركزي</h2>
+
 
               <div  class="flex justify-between items-center mb-6">
                 <button on:click={() => sellDates(50)}
